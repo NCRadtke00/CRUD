@@ -66,5 +66,19 @@ namespace ReactCRUD.Controllers
             };
 
         }
+        [Route("Deletestudent")]
+        [HttpDelete]
+        public object Deletestudent(int id)
+        {
+            var obj = DB.studentmasters.Where(x => x.Id == id).ToList().FirstOrDefault();
+            DB.studentmasters.Remove(obj);
+            DB.SaveChanges();
+            return new Response
+            {
+                Status = "Delete",
+                Message = "Delete Successfuly"
+            };
+        }
+
     }
 }
