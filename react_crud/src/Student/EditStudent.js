@@ -16,14 +16,14 @@ class Edit extends React.Component {
     super(props);
 
     this.onChangeName = this.onChangeName.bind(this);
-    this.onChangeRollNo = this.onChangeRollNo.bind(this);
+    this.onChangeRollno = this.onChangeRollno.bind(this);
     this.onChangeClass = this.onChangeClass.bind(this);
     this.onChangeAddress = this.onChangeAddress.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
       Name: "",
-      RollNo: "",
+      Rollno: "",
       Class: "",
       Address: "",
     };
@@ -38,7 +38,7 @@ class Edit extends React.Component {
       .then((response) => {
         this.setState({
           Name: response.data.Name,
-          RollNo: response.data.RollNo,
+          Rollno: response.data.Rollno,
           Class: response.data.Class,
           Address: response.data.Address,
         });
@@ -53,9 +53,9 @@ class Edit extends React.Component {
       Name: e.target.value,
     });
   }
-  onChangeRollNo(e) {
+  onChangeRollno(e) {
     this.setState({
-      RollNo: e.target.value,
+      Rollno: e.target.value,
     });
   }
   onChangeClass(e) {
@@ -75,7 +75,7 @@ class Edit extends React.Component {
     const obj = {
       Id: this.props.match.params.id,
       Name: this.state.Name,
-      RollNo: this.state.RollNo,
+      Rollno: this.state.Rollno,
       Class: this.state.Class,
       Address: this.state.Address,
     };
@@ -107,14 +107,14 @@ class Edit extends React.Component {
             </FormGroup>
             <FormGroup row>
               <Label for="Password" sm={2}>
-                RollNo
+                Rollno
               </Label>
               <Col sm={10}>
                 <Input
                   type="text"
                   name="RollNo"
-                  value={this.state.RollNo}
-                  onChange={this.onChangeRollNo}
+                  value={this.state.Rollno}
+                  onChange={this.onChangeRollno}
                   placeholder="Enter RollNo"
                 />
               </Col>
