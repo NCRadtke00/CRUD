@@ -10,20 +10,20 @@ import {
   Button,
 } from "reactstrap";
 import axios from "axios";
-import "../Student/Addstudent.css";
+import "./AddStudent.css";
 class Edit extends React.Component {
   constructor(props) {
     super(props);
 
     this.onChangeName = this.onChangeName.bind(this);
-    this.onChangeRollno = this.onChangeRollno.bind(this);
+    this.onChangeRollNo = this.onChangeRollNo.bind(this);
     this.onChangeClass = this.onChangeClass.bind(this);
     this.onChangeAddress = this.onChangeAddress.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
       Name: "",
-      Rollno: "",
+      RollNo: "",
       Class: "",
       Address: "",
     };
@@ -38,7 +38,7 @@ class Edit extends React.Component {
       .then((response) => {
         this.setState({
           Name: response.data.Name,
-          Rollno: response.data.Rollno,
+          RollNo: response.data.RollNo,
           Class: response.data.Class,
           Address: response.data.Address,
         });
@@ -53,9 +53,9 @@ class Edit extends React.Component {
       Name: e.target.value,
     });
   }
-  onChangeRollno(e) {
+  onChangeRollNo(e) {
     this.setState({
-      Rollno: e.target.value,
+      RollNo: e.target.value,
     });
   }
   onChangeClass(e) {
@@ -75,7 +75,7 @@ class Edit extends React.Component {
     const obj = {
       Id: this.props.match.params.id,
       Name: this.state.Name,
-      Rollno: this.state.Rollno,
+      RollNo: this.state.RollNo,
       Class: this.state.Class,
       Address: this.state.Address,
     };
@@ -107,14 +107,14 @@ class Edit extends React.Component {
             </FormGroup>
             <FormGroup row>
               <Label for="Password" sm={2}>
-                Rollno
+                RollNo
               </Label>
               <Col sm={10}>
                 <Input
                   type="text"
                   name="RollNo"
-                  value={this.state.Rollno}
-                  onChange={this.onChangeRollno}
+                  value={this.state.RollNo}
+                  onChange={this.onChangeRollNo}
                   placeholder="Enter RollNo"
                 />
               </Col>

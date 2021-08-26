@@ -22,7 +22,7 @@ namespace ReactCRUD.Controllers
                 {
                     studentmaster sm = new studentmaster();
                     sm.Name = st.Name;
-                    sm.RollNo = st.Rollno;
+                    sm.RollNo = st.RollNo;
                     sm.Address = st.Address;
                     sm.Class = st.Class;
                     DB.studentmasters.Add(sm);
@@ -40,7 +40,7 @@ namespace ReactCRUD.Controllers
                     {
 
                         obj.Name = st.Name;
-                        obj.RollNo = st.Rollno;
+                        obj.RollNo = st.RollNo;
                         obj.Address = st.Address;
                         obj.Class = st.Class;
                         DB.SaveChanges();

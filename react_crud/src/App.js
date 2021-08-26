@@ -1,6 +1,6 @@
 import React from "react";
-import Addstudent from "./Student/Addstudent";
-import Studentlist from "./Student/Studentlist";
+import AddStudent from "./Student/AddStudent";
+import StudentList from "./Student/StudentList";
 import EditStudent from "./Student/EditStudent";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
@@ -12,12 +12,12 @@ function App() {
           <div className="collapse navbar-collapse">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <Link to={"/Addstudent"} className="nav-link">
-                  Addstudent
+                <Link to={"/AddStudent"} className="nav-link">
+                  AddStudent
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to={"/Studentlist"} className="nav-link">
+                <Link to={"/StudentList"} className="nav-link">
                   Student List
                 </Link>
               </li>
@@ -26,9 +26,9 @@ function App() {
         </nav>{" "}
         <br />
         <Switch>
-          <Route exact path="/Addstudent" component={Addstudent} />
+          <Route exact path="/AddStudent" component={AddStudent} />
           <Route path="/edit/:id" component={EditStudent} />
-          <Route path="/Studentlist" component={Studentlist} />
+          <Route path="/StudentList" component={StudentList} />
         </Switch>
       </div>
     </Router>

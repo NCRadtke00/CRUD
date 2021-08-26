@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Table from "./Table";
 
-export default class Studentlist extends Component {
+export default class StudentList extends Component {
   constructor(props) {
     super(props);
     this.state = { business: [] };
@@ -34,7 +34,7 @@ export default class Studentlist extends Component {
           <thead>
             <tr>
               <th>Name</th>
-              <th>Rollno</th>
+              <th>RollNo</th>
               <th>Class</th>
               <th>Address</th>
               <th colSpan="4">Action</th>

@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import "../Student/AddStudent.css";
+import "./AddStudent.css";
 import {
   Container,
   Col,
@@ -11,7 +11,7 @@ import {
   Input,
   Button,
 } from "reactstrap";
-class Addstudent extends React.Component {
+class AddStudent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,7 +21,7 @@ class Addstudent extends React.Component {
       Address: "",
     };
   }
-  Addstudent = () => {
+  AddStudent = () => {
     axios
       .post("http://localhost:52564/Api/Student/AddotrUpdatestudent/", {
         Name: this.state.Name,
@@ -115,7 +115,7 @@ class Addstudent extends React.Component {
               <Col sm={1}>
                 <button
                   type="button"
-                  onClick={this.Addstudent}
+                  onClick={this.AddStudent}
                   className="btn btn-success"
                 >
                   Submit
@@ -133,4 +133,4 @@ class Addstudent extends React.Component {
   }
 }
 
-export default Addstudent;
+export default AddStudent;
