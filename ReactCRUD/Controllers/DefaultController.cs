@@ -5,16 +5,13 @@ using System.Web;
 using System.Web.Mvc;
 using ReactCRUD.Models;
 using ReactCRUD;
+
 namespace ReactCRUD.Controllers
 {
+    [RoutePrefix("Api/Student")]
     public class DefaultController : Controller
     {
-        private readonly CrudDemoEntities DB;
-        // GET: Default
-        public ActionResult Index()
-        {
-            return View();
-        }
+        CrudDemoEntities DB = new CrudDemoEntities();
         [Route("AddotrUpdatestudent")]
         [HttpPost]
         public object AddotrUpdatestudent(Student st)
@@ -66,6 +63,22 @@ namespace ReactCRUD.Controllers
             };
 
         }
+        [Route("Studentdetails")]
+        [HttpGet]
+        public object Studentdetails()
+        {
+
+            var a = DB.studentmasters.ToList();
+            return a;
+        }
+
+        [Route("StudentdetailById")]
+        [HttpGet]
+        public object StudentdetailById(int id)
+        {
+            var obj = DB.studentmasters.Where(x => x.Id == id).ToList().FirstOrDefault();
+            return obj;
+        }
         [Route("Deletestudent")]
         [HttpDelete]
         public object Deletestudent(int id)
@@ -79,6 +92,5 @@ namespace ReactCRUD.Controllers
                 Message = "Delete Successfuly"
             };
         }
-
     }
 }
